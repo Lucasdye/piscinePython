@@ -1,6 +1,6 @@
 
 def all_thing_is_obj(object: any) -> int:
-    # Retrieve object's type (itself a type)
+  # Retrieve object's type (itself a type)
 	obj_type = type(object)
 
 	# Respect subject representation of the type
