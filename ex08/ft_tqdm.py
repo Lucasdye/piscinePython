@@ -3,7 +3,8 @@ from time import sleep
 
 def ft_tqdm(lst: range) -> None:
     """
-    This script emulates the tqdm function, rendering a loadind bar on the terminal output
+    This script emulates the tqdm function,
+    rendering a loadind bar on the terminal output.
     """
     M = lst.stop
     percentage = 0
