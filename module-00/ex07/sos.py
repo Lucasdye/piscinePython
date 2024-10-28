@@ -54,7 +54,7 @@ def main():
     org_text = arg.argv[1].upper()
     morse_text = ""
 
-    # Translate to morse using dictionary with list comprehension tech
+    # Translate text in morse using dictionary with list comprehension tech
     try:
         for char in org_text:
             morse_text += alnum_morse[char]

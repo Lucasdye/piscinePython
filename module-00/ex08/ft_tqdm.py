@@ -32,7 +32,7 @@ def ft_tqdm(lst: range) -> None:
 
 
 def main():
-    for elem in ft_tqdm(range(100000)):
+    for elem in ft_tqdm(range(1000)):
         sleep(0.005)
 
 

@@ -4,9 +4,10 @@ ft_set = {"Hello", "tutu!"}
 ft_dict = {"Hello" : "titi!"}
 
 # Changeables
-ft_list = ["Hello", "World!"]
-ft_dict = {"Hello" : "42Paris!"}
-ft_set = {"Hello", "Paris!"}
+ft_list[1] =  "World!"
+ft_dict["Hello"] = "42Paris!"
+ft_set.remove("tutu!")
+ft_set.add("Paris!")
 
 # Immuables
 ft_tuple = ("Hello", "France!")

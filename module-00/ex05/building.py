@@ -21,7 +21,7 @@ def analyse_string(text: str) -> tuple:
     punctuation_set = {"?", ":", "'", "(", ")", "-", "[",  "]",
                             ".", "_", "!", ";",  ","}
 
-    # Storing dictionary
+    # Initializing dictionary
     count_dict = {"digits": 0, "uppers": 0, "lowers": 0,
                   "spaces": 0, "punctuations": 0}
 
