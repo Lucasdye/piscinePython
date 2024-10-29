@@ -18,6 +18,8 @@ def main():
       whatis(x)
     except ValueError: 
       print("AssertionError: argument is not an integer")
+      return 1
+    return 0
 
 if __name__ == "__main__":
 	main()

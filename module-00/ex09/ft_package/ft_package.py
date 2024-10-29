@@ -1,17 +1,14 @@
 def count_in_list(lst: list, target) -> int:
     """
-    Prints out and returns the number of occurences
-    of target in list
+    Returns and counts the number of occurences
+    of target in list by recursion
     """
     count = 0
     for element in lst:
         if isinstance(element, list):
-            for element in lst:
-                if element == target:
-                    count += 1
+            count = count_in_list(element, target)
         elif element == target:
             count += 1
-    print(count)
     return count
 
 
@@ -20,7 +17,7 @@ def main():
     Calls count_in_list for printing out
     the number of occurences of target in list
     """
-    count_in_list([["hello", "salut"], "bonjour", "salut", ], "salut")
+    print(count_in_list([[["salut", "salut"], "salut"], "salut"], "salut"))
     return 0
 
 

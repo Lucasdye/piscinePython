@@ -10,4 +10,4 @@ def all_thing_is_obj(object: any) -> int:
 		print("type not found")
 	else:
 		print(obj_type.__name__,":", obj_type)
-	return (42)
+	return (0)

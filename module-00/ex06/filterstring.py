@@ -22,6 +22,7 @@ def main():
 
     # Spliting words into a list.
     words = arg.argv[1].split(' ')
+    
 
     # Checking if the words are alphabetical characters
     compare_list = ft_filter(lambda word: word.isalpha(), words)

@@ -9,7 +9,7 @@ ft_dict["Hello"] = "42Paris!"
 ft_set.remove("tutu!")
 ft_set.add("Paris!")
 
-# Immuables
+# Immuable
 ft_tuple = ("Hello", "France!")
 
 print(ft_list)
