@@ -29,6 +29,7 @@ def ft_grey(array) -> tuple:
     grey_array = [(el[1], el[1], el[1]) for el in color_array]
     return tuple(grey_array)
 
+
 def main():
     """
     This main serves the autonomy of the module

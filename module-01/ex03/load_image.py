@@ -21,23 +21,40 @@ def retrieve_img(path: str) -> img:
         return None
     return im
     
+# def ft_load(path: str, *arg) -> tuple:
+#     """
+#     This function loads an image from the path parameter,
+#     saves the pixels colors in a tuple, and returns a formated tuple
+#     which output correctly those informations
+  
+#     """
+#     if checker(path):
+#         return (print("The argument isn't a string"), 1)[1]
+#     im = retrieve_img(path)
+#     if im is None:
+#         return 1
+#     if arg:
+#         string = arg[0] + " (" + str(im.width) + ", " + str(im.height) + ", " + str(len(im.mode)) + ")"
+#     else:
+#         string = "The shape of image is: (" + str(im.width) + ", " + str(im.height) + ", " + str(len(im.mode)) + ")"
+#     res = (string, tuple(im.getdata()))
+#     return res
 def ft_load(path: str, *arg) -> tuple:
     """
     This function loads an image from the path parameter,
-    saves the pixels colors in a tuple, and returns a formated tuple
-    which output correctly those informations
-  
+    returns the pixels colors in a tuple and prints out
+    the dimension of the image.
     """
     if checker(path):
         return (print("The argument isn't a string"), 1)[1]
     im = retrieve_img(path)
     if im is None:
         return 1
-    if arg:
-        string = arg[0] + " (" + str(im.width) + ", " + str(im.height) + ", " + str(len(im.mode)) + ")"
-    else:
-        string = "The shape of image is: (" + str(im.width) + ", " + str(im.height) + ", " + str(len(im.mode)) + ")"
-    res = (string, tuple(im.getdata()))
+    # Convert the image to RGB format
+    rgb_im = im.convert("RGB")
+    msg = "The shape of image is:"
+    print(f"{msg} ({rgb_im.width}, {rgb_im.height}, {len(rgb_im.mode)})")
+    res = (list(rgb_im.getdata()))
     return res
 
 

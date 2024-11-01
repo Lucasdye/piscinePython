@@ -1,42 +1,58 @@
-def int_float_checker(height: list[int | float],
-                      weight: list[int | float]) -> bool:
+
+def num_lst_checker(int_list: list[int | float]) -> bool:
     """
-    Checks if the elements in both lists are floats or ints
+    Checks if the elements in both lists are floats or ints.
     """
-    if isinstance(height, list) is False:
-        lst1 = [height]
-    else:
-        lst1 = height
-    if isinstance(weight, list) is False:
-        lst2 = [weight]
-    else:
-        lst2 = weight
-    for el in lst1:
-        if isinstance(el, int) is False and isinstance(el, float) is False:
-            return True
-    for el in lst2:
+    for el in int_list:
         if isinstance(el, int) is False and isinstance(el, float) is False:
             return True
     return False
 
 
+def checker(height: list[int | float], weight: list[int | float]) -> bool:
+    """
+    Checks if the lists are ints or floats, and if height and weight have same
+    number of elements to assure the bmi calculation.
+    """
+    if num_lst_checker(height):
+        return True
+    if num_lst_checker(weight):
+        return True
+    if len(height) != len(weight):
+        return True
+
+
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
-    if int_float_checker(bmi, limit):
+    """
+    Returns a boolean for each value of the bmi list exceeding
+    the limit value into a list.
+    """
+    # Checker
+    if num_lst_checker(bmi) is True and isinstance(limit, float) is False:
+        return (print("The bmi list data is corrupted."), None)[1]
+    if isinstance(limit, int) is False:
         return None
+
     return [value >= limit for value in bmi]
 
 
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
-    if int_float_checker(height, weight) or len(height) != len(weight):
-        return None
+    """
+    Returns a list of bmi calculated from the height and weight list paramater.
+    Returns None if data of the lists is corrupted or asymetrical.
+    """
+    err_msg = "Either the data is corrupted or the lists aren't the same size."
+    if checker(height, weight) is True:
+        return (print(err_msg), None)[1]
+
     return [w / (h ** 2) for h, w in zip(height, weight)]
 
 
 def main():
-    # bmis = give_bmi([1.80, 1.65, 1.45], [68.5, 68.5, 80])
-    # print(bmis)
-    # apply_limit(bmis, 22)
+    """
+    This main is intended for testing and the indepedency of the script.
+    """
     return 0
 
 
